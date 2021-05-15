@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body{
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+            div{
+                text-align: center;
+            }
+            .input-text{
+                width: 350px;
+                height: 40px;
+                border-radius: 5px;
+                font-size: 16px;
+                padding: 5px;
+            }
+            .btn{
+                color: white;
+                background-color: purple;
+                border-color: purple;
+                border-radius: 5px;
+                height: 50px;
+                width: 90px;
+                font-size: 18px;
+                font-weight: bold;
+            }
+            .btn:hover{
+                background-color: violet;
+            }
+            li{
+                cursor: pointer;
+                position: relative;
+                padding: 12px 8px 12px 40px;
+                list-style-type: none;
+                background: rgb(185, 185, 185);
+                font-size: 18px;
+                margin-bottom: 1px;
+            }
+        </style>
+    </head>
+<body>
+    <div>
+        <h2>My To Do List</h2>
+        <input class="input-text" type="text" id="myInput" placeholder="Enter Title">
+        <input class="btn" type="button" value="Add" onclick="newElement()" />
+    </div>
+
+    <ul id="myUL"></ul>
+
+    <script>
+        var myNodelist = document.getElementsByTagName("LI");
+        var i;
+
+        function newElement() {
+            var li = document.createElement("li");
+            var inputValue = document.getElementById("myInput").value;
+            var t = document.createTextNode(inputValue);
+            li.appendChild(t);
+            if (inputValue === '') {
+                alert("You must write something!");
+            } else {
+                document.getElementById("myUL").appendChild(li);
+            }
+            document.getElementById("myInput").value = "";
+        }
+    </script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,40 @@
+<!--Using Javascript Validations-->
+<html>
+    <body>
+        <form name="form1" onsubmit="CheckValidations()"> 
+			<input type="text" name="firstname" >
+			<input type="checkbox" name="checkme" >Check Me<br/><br/>
+			<input type="submit" value="Submit" >
+		</form>
+	
+		<script>
+			function CheckValidations()
+			{
+				var empt = document.forms["form1"]["firstname"].value;
+				var box=document.forms["form1"]["checkme"].checked;
+				if (empt == "" || box == false)
+				{
+					alert("Either input box is empty or checkbox is unchecked");
+					return false;
+				}
+				else 
+				{
+					return true; 
+				}
+			}
+		</script>
+    </body>
+</html>
+
+<!--Using HTML Attributes-->
+<!-- <html>
+    <body>
+        <form>
+   		<input type="text" name="firstname" required><br/>
+   		<input type="checkbox" name="checkme" required>Check Me<br/>
+		<input type="submit" value="Submit">
+	</form>     
+    </body>
+</html> -->
+
+

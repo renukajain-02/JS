@@ -1,0 +1,25 @@
+
+<html>
+	<body>
+		<script>
+			var arr = [1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0];
+            
+            var findMaxConsecutiveOnes = function(nums) 
+            {
+                let largestCount = 0;
+                let currentCount = 0;
+                for (let i = 0; i<nums.length; i++) 
+                {
+                    if (nums[i] === 0) 
+                        currentCount = 0;
+                    else 
+                        currentCount++;
+
+                    if (currentCount > largestCount) largestCount = currentCount;
+                };
+                return largestCount;
+            };
+            document.write("Count of maximum consecutive 1's in an array of 0's and 1's are ==== " +findMaxConsecutiveOnes(arr));
+		</script>
+	</body>
+</html>
